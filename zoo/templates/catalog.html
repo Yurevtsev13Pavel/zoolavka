@@ -1,0 +1,51 @@
+{% extends "root.html" %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    
+    </head>
+    <body>
+    {% block content %}
+
+    <div class="two">  
+      {% for product in products %}  
+             
+    <div class="card" style="width: 18rem;"> 
+      <img src={{ product.img.url }} class="card-img-top" width="200px" height="200px" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="truncate-text" >{{ product.description|truncatechars:80}}</p> 
+        <p class="truncate-text" >{{ product.price}}</p>   
+          <input type="submit" value="В корзину">
+
+  
+
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+<ul style="display: flex;justify-content: space-evenly;width: 150px; color: #ffa600; background-color: #ffa600;margin-left: 144px; text-decoration: none;"}>
+    {% for i in paginator.page_range %}
+    
+        {% if i == product.number %}
+            {{i}}
+        {% else %}
+        <a href="{% url 'zoo:catalog' %}?page={{i}}" style="text-decoration: none;">{{i}}</a>
+        {% endif %}
+    
+    {% endfor %}
+</ul>
+
+
+
+</div>
+<form action="." method='get'>
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Поиск">
+</form>
+    
+    {% endblock %}
+    </body>
+    
+</html>

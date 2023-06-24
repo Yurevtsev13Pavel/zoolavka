@@ -1,0 +1,31 @@
+{% extends "root.html" %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    
+    </head>
+    <body>
+    {% block content %}
+    
+     <div class="slaid_1">
+     
+         <div class="block">
+        
+                 {% for category in category %} 
+                 <div class="" style="display:flex; flex-direction: column; align-items: center;">
+                 <img class="" style="width:130px; height: 130px;" src="{{ category.img.url }}">
+                    <a href="{% url 'zoo:catalog' %}" style="text-decoration:none; color:#ffa600;">
+                    <h2>{{ category.name }}</h2></a>
+                  </div>    
+                   
+                 {% endfor %} 
+             
+
+         </div>
+     </div>
+
+    
+    {% endblock %}
+    </body>
+    
+</html>

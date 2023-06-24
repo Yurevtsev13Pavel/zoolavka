@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<script src = '{% static "css/bootstrap.min.css" %}'></script>
+    <link rel="stylesheet" href="/static/css/css.css">
+     <link rel="stylesheet" href="/static/css/style.css">
+     <link rel="stylesheet" href="/static/css/stile.css">
+     <link rel="stylesheet" href="/static/css/tov.css">
+     <link rel="stylesheet" href="/static/css/usl.css">
+     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+      <script type="text/javascript" src="/static/js/script.js"></script>
+    </head>
+    <body>
+ 
+      
+ 
+     <div class="fix_header">
+         <div class="header">
+             <img class="logo" src="/static/img/zoo.png">
+             <div class="menu">
+                 <a class="a_1" href="http://127.0.0.1:8000/zoo/">Главная</a>
+                 <a class="a_1" href="{% url 'zoo:tovar' %}">Товары</a>
+                 <a class="a_1" href="{% url 'zoo:uslygi' %}">Услуги</a>
+                 
+          
+             </div>
+             <div class="icons">
+                 {% if user.is_authenticated %}
+                       <span>{{ user.username }}</span>
+                       <a href="{% url 'account_logout' %}"
+                          style="color: #ffa600;; font-weight: 700; text-transform: uppercase;">
+                           Выход
+                       </a>
+                   {% else %}
+                       <a href="{% url 'account_login' %}"
+                          style="color: #ffa600;; font-weight: 700; text-transform: uppercase;">
+                           Вход
+                       </a>
+                       /
+                        <a href="{% url 'account_signup' %}"
+                          style="color: #ffa600;; font-weight: 700; text-transform: uppercase;">
+                           Регистрация
+                       </a>
+                   {% endif %}
+                 <a class="ic" href="http://127.0.0.1:8000/cart/"><img class="icon" src="/static/img/cor.png"></a>
+             </div>
+
+         </div>
+     </div>
+
+  {% block content %}
+  {% endblock %}
+   <div class="slaid_8">
+       <div class="div_13">
+           <img src="/static/img/zoo.png">
+           <div class="line_footer"></div>
+           <div class="a_p">
+               <div>
+                   <a href="http://127.0.0.1:8000/zoo/">Главная</a>
+                   <a href="{% url 'zoo:tovar' %}">Товары</a>
+                   <a href="{% url 'zoo:uslygi' %}">Услуги</a>
+
+               </div>
+               <p>©zooлавка</p>
+           </div>
+           <div class="contact_footer">
+               <a href="https://www.instagram.com/zooexpert45"> <img src="/static/img/inst.png"></a>
+               <a href="https://vk.com/zooexpert45?ysclid=lbjn5pp4in944689038"> <img src="/static/img/vk20.png"></a>
+           </div>
+       </div>
+   </div>
+    </body>
+</html>    
