@@ -1,0 +1,308 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.one{
+display:flex;
+
+}
+.two{
+display:flex;
+flex-wrap: wrap;
+margin-left:50px;
+align-items: center;
+    justify-content: center;
+    margin-top: 60px;}
+.card {
+  width: 225px;
+  min-height: 350px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Размещаем элементы в колонку */
+  border-radius: 4px;
+  transition: 0.2s;
+  position: relative;
+}
+
+/* При наведении на карточку - меняем цвет тени */
+.card:hover {
+  box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+}
+
+.card__top {
+  flex: 0 0 220px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+  position: relative;
+  overflow: hidden; /* Скрываем, что выходит за пределы */
+}
+
+/* Контейнер для картинки */
+.card__image {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card__image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Встраиваем картинку в контейнер card__image */
+  transition: 0.2s;
+}
+
+/* При наведении - увеличиваем картинку */
+.card__image:hover > img {
+  transform: scale(1.1);
+}
+
+/* Размещаем скидку на товар относительно изображения */
+.card__label {
+  padding: 4px 8px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: #ff6633;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+}
+
+.card__bottom {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto; /* Занимаем всю оставшуюся высоту карточки */
+  padding: 10px;
+}
+
+.card__prices {
+  display: flex;
+  margin-bottom: 10px;
+  flex: 0 0 50%; /* Размещаем цены равномерно в две колонки */
+}
+
+.card__price::after {
+  content: "₽";
+  margin-left: 4px;
+  position: relative;
+}
+
+.card__price--discount {
+  font-weight: 700;
+  font-size: 19px;
+  color: #414141;
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+.card__price--discount::before {
+  content: "Со скидкой";
+  font-weight: 400;
+  font-size: 13px;
+  color: #bfbfbf;
+}
+
+.card__price--common {
+  font-weight: 400;
+  font-size: 17px;
+  color: #606060;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-end;
+}
+
+.card__price--common::before {
+  content: "Обычная";
+  font-weight: 400;
+  font-size: 13px;
+  color: #bfbfbf;
+}
+
+.card__title {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.card__title:hover {
+  color: #ff6633;
+}
+
+.card__add {
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  font-size: 17px;
+  color: #70c05b;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #70c05b;
+  border-radius: 4px;
+  cursor: pointer; /* Меняем курсор при наведении */
+  transition: 0.2s;
+  margin-top: auto; /* Прижимаем кнопку к низу карточки */
+}
+
+.card__add:hover {
+  border: 1px solid #ff6633;
+  background-color: #ff6633;
+  color: #fff;
+}
+body{
+    
+    background-color: rgb(250, 250, 250) ;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: white;
+    height: 50px;
+}
+.fix_header{
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 10%),
+                1px 2px 4px 0px rgb(0 0 0 / 10%),
+                2px 4px 8px 0px rgb(255 255 255 / 10%),
+                2px 4px 16px 0px rgb(255 255 255 / 10%)
+}
+a{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+}
+.a_1{
+    color: black;
+    margin-left: 50px;
+}
+.icon{
+    height: 30px;
+    margin-right: 20px;
+}
+.icons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+
+}
+.ikons{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    padding: 10px;
+
+}
+.te{
+    padding: 10px;
+}
+.con{
+    display: flex;
+    width: 260px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+.pr{
+    height:  20px;
+
+}
+.cor{
+    height: 45px;
+}
+.logo{
+    height: 35px;
+}
+
+
+.slaid_1{
+    height: 750px; 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color:  rgb(230, 230, 230);
+}
+.block{
+    height: 470px;
+    width: 470px;
+    background-color: white;
+    margin-left: 10px;
+    margin-top: 50px;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 10%), 1px 2px 4px 0px rgb(0 0 0 / 10%), 2px 4px 8px 0px rgb(255 255 255 / 10%), 2px 4px 16px 0px rgb(255 255 255 / 10%);
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.tx{
+    color:black;
+    text-decoration: none;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+}
+.txte{
+    color:black;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;; 
+}
+
+
+
+.slaid_8{
+    height: 200px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.slaid_8 img{
+    height: 35px;
+}
+.a_p{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5em;
+
+}
+.line_footer{
+    height: 100px;
+    width: 2px;
+    background-color: #ffa600;
+}
+.slaid_8 a, p{
+    color: #ffa600;
+    font-size: 16px;
+    margin-left: 10px;
+}
+.div_13{
+    display: flex;
+    width: 700px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contact_footer a{
+    margin-left: 20px;
+}
